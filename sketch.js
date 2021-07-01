@@ -22,7 +22,7 @@ const screen_height = 600;
 var plateau = [];
 const n = 500;
 const size = 7;
-const maximum_size = 4;
+const maximum_size = 2.5;
 const minimum_size = 2;
 var offsetX;
 var offsetY;
