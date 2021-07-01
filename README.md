@@ -1,4 +1,4 @@
-# Puddle
+# Puddlaroid
 ## Experimentation with p5.js and Unsplash API
 www.vidanmurati.com/puddlaroid
 
