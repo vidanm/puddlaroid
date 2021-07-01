@@ -31,8 +31,11 @@ var x = 0;
 var y = 0;
 var img;
 
+
 function preload() {
 	img = loadImage('https://source.unsplash.com/random');
+	let app = document.getElementById("app");
+	app.style.display = "none";
 }
 
 function init(){
@@ -110,10 +113,8 @@ function setup() {
   let color1;
   let color2;
   let color3;
-
-  createCanvas(screen_width,screen_height);
   img.loadPixels();
-  
+
   color1 = average_color_as_background()
   color2 = average_color_as_background()
   color3 = average_color_as_background()
@@ -121,8 +122,12 @@ function setup() {
   let c1 = rgbToHex(color1.r,color1.g,color1.b)
   let c2 = rgbToHex(color2.r,color2.g,color2.b)
   let c3 = rgbToHex(color3.r,color3.g,color3.b)
-
   document.body.style.background = "linear-gradient(145deg, "+c1+" 0%, "+c2+" 75%, "+c3+" 100%)";
+
+  let app = document.getElementById("app");
+  app.style.display = "block";
+
+  createCanvas(screen_width,screen_height);
   init();
   reset();
   background(c1);

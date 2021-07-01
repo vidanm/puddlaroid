@@ -4,11 +4,13 @@
 #app {
 	margin:auto;
 	margin-bottom:0;
-	padding-bottom:-10;
+	padding-bottom:0;
 	width:600px;
-	transform:translateY(18%);
+	height:700px;
+	margin-top:10%;
 	box-shadow:5px 5px 15px rgba(0,0,0,0.5);
 	border: 15px solid rgb(240,240,240);
+	--animate-duration:2s;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
 }
 
 h1 {
-	margin:auto;
+	margin-top:-15px;
 	background-color:rgb(240,240,240);
 	color:white;
 	text-align:center;
