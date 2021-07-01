@@ -1,4 +1,4 @@
-# puddle
+# Puddle
 ## experimentation with p5.js
 www.vidanmurati.com/puddle
 
