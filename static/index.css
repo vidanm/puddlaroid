@@ -1,24 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-main {
-	border-radius:20px;
-}
 
 #app {
 	margin:auto;
+	margin-bottom:0;
+	padding-bottom:-10;
 	width:600px;
-	transform:translateY(20%);
+	transform:translateY(18%);
 	box-shadow:5px 5px 15px rgba(0,0,0,0.5);
-}
-
-#back {
-	box-shadow:5px 5px 15px rgba(0,0,0,0.5);
-	background-image:url("https://source.unsplash.com/random");
-	background-size:cover;
-	background-position:center;
-	text-align:center;
-	z-index:1;
-	overflow:hidden;
+	border: 15px solid rgb(240,240,240);
 }
 
 body {
@@ -28,6 +18,8 @@ body {
 }
 
 h1 {
+	margin:auto;
+	background-color:rgb(240,240,240);
 	color:white;
 	text-align:center;
 	font-size:50;
