@@ -1,6 +1,6 @@
-# Puddle
+# Puddlaroid
 ## Experimentation with p5.js and Unsplash API
-www.vidanmurati.com/puddle
+www.vidanmurati.com/puddlaroid
 
-![Exemple image 1](https://i.ibb.co/WKbtTGt/Thu-Jul-1-10-03-25-AM-CEST-2021.png)
-![Exemple image 2](https://i.ibb.co/xMhH1sr/Thu-Jul-1-10-06-50-AM-CEST-2021.png)
+![Exemple image 1](https://i.ibb.co/WGqv2Ch/Thu-Jul-1-12-49-16-PM-CEST-2021.png)
+![Exemple image 2](https://i.ibb.co/fFkyscw/Thu-Jul-1-12-51-23-PM-CEST-2021.png)
