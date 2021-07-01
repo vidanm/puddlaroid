@@ -5,22 +5,17 @@ main {
 }
 
 #app {
-	background-color:black;
-	width:400px;
-	height:810px;
 	margin:auto;
-	transform:translateY(10%);
-	box-shadow:0px 0px 20px black;
+	width:600px;
+	transform:translateY(20%);
+	box-shadow:5px 5px 15px rgba(0,0,0,0.5);
 }
 
 #back {
-	box-shadow:0px 0px 20px black;
-	width:400px;
-	height:810px;
+	box-shadow:5px 5px 15px rgba(0,0,0,0.5);
 	background-image:url("https://source.unsplash.com/random");
 	background-size:cover;
 	background-position:center;
-	filter:sepia(10%) contrast(90%);
 	text-align:center;
 	z-index:1;
 	overflow:hidden;
@@ -29,6 +24,11 @@ main {
 body {
 	text-align:center;
 	margin:auto;
-	background: rgb(36,27,0);
 	background: linear-gradient(145deg, #16181c 0%,  #474345 75%, #797a7d 100%);
+}
+
+h1 {
+	color:white;
+	text-align:center;
+	font-size:50;
 }

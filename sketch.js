@@ -17,13 +17,15 @@ class color {
 	}
 }
 
-const screen_width = 400;
-const screen_height = 810;
+const screen_width = 600;
+const screen_height = 600;
 var plateau = [];
 const n = 500;
 const size = 7;
 const maximum_size = 4;
 const minimum_size = 2;
+var offsetX;
+var offsetY;
 var newpoint;
 var x = 0;
 var y = 0;
@@ -37,16 +39,16 @@ function init(){
 	clear();
 	plateau = [];
 	for (var i = 0; i < n; i++){
-		let startX = Math.floor(Math.random() * img.width);
-		let startY = Math.floor(Math.random() * img.height);
-		let posX = Math.floor(Math.random() * img.width);
-		let posY = Math.floor(Math.random() * img.height);
+		let startX = Math.floor(Math.random() * screen_width);
+		let startY = Math.floor(Math.random() * screen_height);
+		let posX = Math.floor(Math.random() * screen_width);
+		let posY = Math.floor(Math.random() * screen_height);
 		newPoint = new moving_point(
 			startX,
 			startY,
 			posX,
 			posY,
-			img.get(posX,posY)
+			img.get(posX+offsetX,posY+offsetY)
 		);
 		plateau.push(newPoint)
 	}
@@ -59,8 +61,8 @@ function average_color_as_background(){
 	let n = 25;
 
 	for (let i = 0; i < n; i++){
-	    let x = random(img.width);
-	    let y = random(img.height);
+	    let x = random(screen_width);
+	    let y = random(screen_height);
 	    let c = img.get(x,y);
 	    totalR += c[0];
 	    totalG += c[1];
@@ -85,24 +87,31 @@ function rgbToHex(r, g, b) {
 
 function reset() {
 	for (var i = 0; i < n; i++) {
-		var dest_x = Math.floor(Math.random() * img.width);
-		var dest_y = Math.floor(Math.random() * img.height);
+		var dest_x = Math.floor(Math.random() * screen_width);
+		var dest_y = Math.floor(Math.random() * screen_height);
 		plateau[i].dest_x = dest_x;
 		plateau[i].dest_y = dest_y;
-		plateau[i].color = img.get(dest_x,dest_y);
+		plateau[i].color = img.get(dest_x+offsetX,dest_y+offsetY);
 	}
 }
 
 
 function setup() {
-  let x = img.height/810;
-  let y = img.width/400;
+
+  if (img.width > img.height){
+    img.resize(0,screen_height);
+  } else {
+    img.resize(screen_width,0);
+  }
+  offsetX = (img.width-screen_width)/2;
+  offsetY = (img.height-screen_height)/2;
+  let y = img.height/screen_height;
+  let x = img.width/screen_width;
   let color1;
   let color2;
   let color3;
-  img.resize(img.width/y,img.height/x);
 
-  createCanvas(400,810);
+  createCanvas(screen_width,screen_height);
   img.loadPixels();
   
   color1 = average_color_as_background()
@@ -117,26 +126,12 @@ function setup() {
   init();
   reset();
   background(c1);
-  console.log("Hello");
-  /*drawingContext.shadowOffsetX  = 1;
-  drawingContext.shadowOffsetY = -1;
-  drawingContext.shadowBlur = 20;
-  drawingContext.shadowColor = 'black';*/
 
 }
 
-function get_average_color(){
-	let colors = []
-	let moyenne = 0
-	for (var j = 0; j < n; j+=10){
-		for (var i = j; i < j+10; i++){
-					
-		}
-	}
-}
 
 function draw() {
-	strokeWeight(size);
+  strokeWeight(size);
   for (var i = 0; i <plateau.length; i++) {
     
     let size = (maximum_size/abs(plateau[i].dest_x-plateau[i].x))
@@ -151,13 +146,13 @@ function draw() {
     plateau[i].y += (plateau[i].dest_y-plateau[i].y)*0.1;
 
 	if (abs(plateau[i].dest_x - plateau[i].x) <= 0.25){
-		let posX = Math.floor(Math.random() * img.width);
-		let posY = Math.floor(Math.random() * img.height);
+		let posX = Math.floor(Math.random() * screen_width);
+		let posY = Math.floor(Math.random() * screen_height);
 		plateau[i].dest_x = posX
 		plateau[i].dest_y = posY
 		plateau[i].x = posX -2
 		plateau[i].y = posY -2
-		plateau[i].color = img.get(plateau[i].dest_x,plateau[i].dest_y)
+		plateau[i].color = img.get(plateau[i].dest_x + offsetX, plateau[i].dest_y+offsetY)
 	}
   }
 }
