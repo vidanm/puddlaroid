@@ -20,9 +20,9 @@ class color {
 const screen_width = 600;
 const screen_height = 600;
 var plateau = [];
-const n = 500;
+const n = 700;
 const size = 7;
-const maximum_size = 2.5;
+const maximum_size = 3;
 const minimum_size = 2;
 var offsetX;
 var offsetY;
@@ -150,7 +150,7 @@ function draw() {
     plateau[i].x += (plateau[i].dest_x-plateau[i].x)*0.2;
     plateau[i].y += (plateau[i].dest_y-plateau[i].y)*0.2;
 
-	if (abs(plateau[i].dest_x - plateau[i].x) <= 0.3){
+	if (abs(plateau[i].dest_x - plateau[i].x) <= Math.random()){
 		let posX = Math.floor(Math.random() * screen_width);
 		let posY = Math.floor(Math.random() * screen_height);
 		plateau[i].dest_x = posX
