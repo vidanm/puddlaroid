@@ -147,10 +147,10 @@ function draw() {
     strokeWeight(plateau[i].size)
     stroke(plateau[i].color);
     circle(plateau[i].x, plateau[i].y,size);
-    plateau[i].x += (plateau[i].dest_x-plateau[i].x)*0.1;
-    plateau[i].y += (plateau[i].dest_y-plateau[i].y)*0.1;
+    plateau[i].x += (plateau[i].dest_x-plateau[i].x)*0.2;
+    plateau[i].y += (plateau[i].dest_y-plateau[i].y)*0.2;
 
-	if (abs(plateau[i].dest_x - plateau[i].x) <= 0.25){
+	if (abs(plateau[i].dest_x - plateau[i].x) <= 0.3){
 		let posX = Math.floor(Math.random() * screen_width);
 		let posY = Math.floor(Math.random() * screen_height);
 		plateau[i].dest_x = posX
